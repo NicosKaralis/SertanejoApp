@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: Album numero 1
+  release: 2015-01-18
+  capa: base64 de uma imagem
+  itunes_store: https://itunes.apple.com/us/album/abbey-road/id401186200?uo=4
+  play_store: market://itunes.apple.com/us/album/abbey-road/id401186200?uo=4
+
+two:
+  nome: Album numero 2
+  release: 2014-01-18
+  capa: base64 de uma imagem
+  itunes_store: https://itunes.apple.com/us/album/abbey-road/id401186200?uo=4
+  play_store: market://
