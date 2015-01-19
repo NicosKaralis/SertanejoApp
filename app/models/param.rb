@@ -20,9 +20,13 @@ class Param < ActiveRecord::Base
     create(key: "#{contato_prepend}#{ key.gsub(' ', '_') }", value: value)
   end
   
+  def self.contatos
+    where.not(key: biografia_key)
+  end
+  
   def self.contatos_hash
     r = {}
-    where.not(key: biografia_key).map do |p|
+    contatos.map do |p|
       r[p.key.gsub(contato_prepend, '')] = p.value
     end
     r

@@ -16,7 +16,7 @@ class Album < ActiveRecord::Base
                          allow_blank: true,
                          format: { with: /\Amarket:\/\//i }
   
-  scope :released, -> { where('release <= ?', Time.now.to_date) }
+  scope :released, -> { where('release <= ?', Time.now.to_date).order(:release) }
   
   # scope :with_itunes,    -> { where('itunes_store IS NOT NULL AND itunes_store <> ?', '') }
   # scope :with_playstore, -> { where('play_store IS NOT NULL AND play_store <> ?', '') }

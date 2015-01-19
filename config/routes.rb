@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  
-  get '/datasource' => 'data#datasource', defaults: { format: :json }
 
+  get '/datasource' => 'data#datasource', defaults: { format: :json }
+  
+  put '/biografia' => 'data#datasource'
+  post '/cantada' => 'data#datasource'
+  delete '/cantada/:id' => 'data#datasource'
+
+  root 'pages#home'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
