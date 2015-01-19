@@ -3,18 +3,10 @@ class DataController < ApplicationController
   
   def datasource
     response = {
-      biografia: "Texto da biografia",
       discografia: Album.released,
-      contato: {
-        facebook: "handler_do_fb",
-        twitter: "handler_do_twitter",
-        instagran: "handler_do_instagran"
-      },
-      cantadas: [
-        "texto das cantadas",
-        "texto das cantadas",
-        "texto das cantadas"
-      ]
+      cantadas: Cantada.all.map(&:text),
+      biografia: Param.biografia,
+      contatos: Param.contatos_hash
     }
     respond_with({data: response})
   end

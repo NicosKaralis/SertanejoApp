@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+valid:
+  text: Texto para cantada 1
+
+missing_text:
+  text: 
+
+blank_text:
+  text: ''

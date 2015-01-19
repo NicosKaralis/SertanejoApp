@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+valid:
+  key: key
+  value: value
+
+missing_key:
+  key: 
+  value: MyString
+
+blank_key:
+  key: ''
+  value: MyString

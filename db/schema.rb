@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118174028) do
+ActiveRecord::Schema.define(version: 20150119060121) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "nome"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20150118174028) do
     t.string   "play_store"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "cantadas", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "params", force: :cascade do |t|
+    t.string   "key"
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
