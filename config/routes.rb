@@ -5,6 +5,18 @@ Rails.application.routes.draw do
   put '/biografia' => 'data#datasource'
   post '/cantada' => 'data#datasource'
   delete '/cantada/:id' => 'data#datasource'
+  
+  scope 'api', defaults: { format: :json } do
+    # Registar/Atualizar usuario
+    post '/usuario' => 'usuario#update'
+    # Buscar usuario para cantada
+    get  '/usuario' => 'usuario#buscar'
+    
+    # Enviar cantada
+    post '/cantadas' => 'cantadas#create'
+    # Buscar cantadas recebidas
+    get  '/cantadas' => 'cantadas#list'
+  end
 
   root 'pages#home'
   

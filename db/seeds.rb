@@ -6,6 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Param.biografia = "Sample biographi text"
+
+Param.new_contato('twitter', 'twneto')
+Param.new_contato('facebook', 'fbneto')
+Param.new_contato('instagram', 'instaneto')
+
+(1..5).each do |i|
+  CantadaTemplate.create(text: "Texto exemplo cantada #{i}")
+end
+
+(-1..10).each do |i|
+  Album.create(nome: "Sample album #{i}", release: Time.now - i.day, capa: 'empty', itunes_store: nil, play_store: nil)
+end
+
 ["Sérgio Teixeira", "Cristiano Cerqueira", "Fábio Alencar", "Álvaro Chaves", "Edgar Duarte", "Vinícius Lobo", "Miguel Pinheiro", "Ricardo Amorim", "Vinícius Paim", "Sílvio Camargo"].each do |nome|
   User.create(fb_id: (rand * 100000).to_i, foto_url: 'https://imagem.gif', sexo: 'm', nome: nome)
 end
