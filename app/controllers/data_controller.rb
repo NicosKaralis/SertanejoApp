@@ -1,5 +1,4 @@
 class DataController < ApplicationController
-  respond_to :xml, :json
   
   def datasource
     response = {
@@ -8,7 +7,7 @@ class DataController < ApplicationController
       biografia: Param.biografia,
       contatos: Param.contatos_hash
     }
-    respond_with({data: response})
+    respond_with response
   end
   
 end
