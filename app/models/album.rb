@@ -16,13 +16,25 @@ class Album < ActiveRecord::Base
                          allow_blank: true,
                          format: { with: /\Amarket:\/\//i }
   
-  scope :released, -> { where('release <= ?', Time.now.to_date).order(:release) }
+  scope :released, -> { where('release <= ?', Time.now.to_date).order(release: :desc) }
   
   # scope :with_itunes,    -> { where('itunes_store IS NOT NULL AND itunes_store <> ?', '') }
   # scope :with_playstore, -> { where('play_store IS NOT NULL AND play_store <> ?', '') }
   
-  def as_json(options)
-    super options.merge only: [:nome, :capa, :itunes_store, :play_store], methods: :release_date
+  def as_json(options={})
+    super options.merge only: filtered_params, methods: filtered_methods
+  end
+  
+  def to_xml(options={})
+    super options.merge only: filtered_params, methods: filtered_methods
+  end
+  
+  def filtered_params
+    [:nome, :capa, :itunes_store, :play_store]
+  end
+  
+  def filtered_methods
+    [:release_date]
   end
   
   def release_date
