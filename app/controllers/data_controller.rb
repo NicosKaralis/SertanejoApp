@@ -3,7 +3,7 @@ class DataController < ApplicationController
   def datasource
     response = {
       discografia: Album.released,
-      cantadas: Cantada.all.map(&:text),
+      cantadas: CantadaTemplate.all,
       biografia: Param.biografia,
       contatos: Param.contatos_hash
     }

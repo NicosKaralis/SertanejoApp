@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+valid_male:
+  nome: 'Sample name'
+  fb_id: 1
+  foto_url: http://guides.rubyonrails.org/images/chapters_icon.gif
+  sexo: m
+  
+valid_female:
+  nome: 'Sample name'
+  fb_id: 2
+  foto_url: http://guides.rubyonrails.org/images/chapters_icon.gif
+  sexo: m
+
+missing_fb_id:
+  nome: 'Sample name'
+  fb_id: 
+  foto_url: http://guides.rubyonrails.org/images/chapters_icon.gif
+  sexo: m
+  
+missing_foto_url:
+  fb_id: 4
+  foto_url: 
+  sexo: f
+  
+blank_foto_url:
+  fb_id: 5
+  foto_url: ''
+  sexo: f
+
+invalid_gender:
+  nome: 'Sample name'
+  fb_id: 6
+  foto_url: http://guides.rubyonrails.org/images/chapters_icon.gif
+  sexo: t
+
+blank_gender:
+  nome: 'Sample name'
+  fb_id: 7
+  foto_url: http://guides.rubyonrails.org/images/chapters_icon.gif
+  sexo: 
