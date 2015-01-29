@@ -1,0 +1,11 @@
+<% unless @c.valid? %>
+  flashAlert('cantadas', 'Mensagem invalida, verifique se ela está em branco')
+<% else %>
+  c = '<li data-tid="<%= @c.id %>"> \
+    <%= link_to "X", "/cantada/#{@c.id}", method: :delete, remote: true, data: { disable_with: "..." } %> \
+    - <%= @c.text %>\
+  </li>'
+
+  $('#cantadas ul').append(c)
+  $('#cantadas form:last input[type=text]').val("")
+<% end %>

@@ -2,9 +2,15 @@ Rails.application.routes.draw do
 
   get '/datasource' => 'data#datasource', defaults: { format: :json }
   
-  put '/biografia' => 'data#datasource'
-  post '/cantada' => 'data#datasource'
-  delete '/cantada/:id' => 'data#datasource'
+  put '/biografia' => 'data#update_biografia'
+  post '/cantada' => 'data#nova_cantada'
+  delete '/cantada/:id' => 'data#remover_cantada'
+  
+  post '/contatos' => 'data#novo_contato'
+  put '/contatos' => 'data#atualizar_contatos'
+  delete '/contato/:id' => 'data#remover_contato'
+  
+  post '/albuns' => 'data#novo_album'
   
   scope 'api', defaults: { format: :json } do
     # Registar/Atualizar usuario

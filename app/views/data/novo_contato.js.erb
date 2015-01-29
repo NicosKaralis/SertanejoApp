@@ -1,0 +1,13 @@
+<% unless @c.valid? %>
+  flashAlert('contatos', 'Novo contato invalido, verifique se algo está em branco ou se já existe')
+<% else %>
+  c = '<li data-cid="<%= @c.id %>"> \
+    <label><%= @c.contato_key %></label> \
+    <%= text_field_tag @c.contato_key, @c.value %> \
+    <%= link_to "X", "/contato/#{@c.id}", method: :delete, remote: true, data: { disable_with: "..." } %> \
+    <%= hidden_field_tag "contato[]", @c.contato_key %> \
+  </li>'
+
+  $('#contatos ul').append(c)
+  $('#contatos form:last input[type=text]').val("")
+<% end %>

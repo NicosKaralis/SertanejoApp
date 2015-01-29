@@ -1,3 +1,91 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#content > div {
+  background: #eee;
+  margin: 5px 0;
+  width: 100%;
+}
+
+div#content > div:first-child {
+  text-align: center;
+}
+
+#biografia form textarea {
+  width: 99%;
+  max-width: 99%;
+  margin: 5px auto;
+  display: block;
+}
+
+#biografia form input[type=submit] {
+  float: right;
+  margin: 5px;
+}
+
+
+#cantadas, #contatos {
+  width: 50%;
+  max-width: 50%;
+  float: left;
+  
+  ul {
+    list-style: none;
+    
+    li {
+      padding: 2px 10px;
+    }
+  }
+}
+
+#cantadas {
+  
+  form {
+    input {
+      width: 91%
+    }
+  
+    input[type=submit] {
+      width: 7%
+    }
+  }
+}
+
+#discografia {
+  ul {
+    list-style: none;
+    
+    li {
+      float: left;
+      width: 50%;
+      margin: 2px 0;
+      
+      img {
+        max-width: 100px;
+        max-height: 100px;
+        float: left;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

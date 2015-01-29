@@ -20,6 +20,10 @@ class Param < ActiveRecord::Base
     create(key: "#{contato_prepend}#{ key.gsub(' ', '_') }", value: value)
   end
   
+  def self.update_contato(key, value)
+    where(key: "#{contato_prepend}#{ key.gsub(' ', '_') }").first.update_attribute(:value, value)
+  end
+  
   def self.contatos
     where.not(key: biografia_key)
   end
@@ -30,6 +34,10 @@ class Param < ActiveRecord::Base
       r[p.key.gsub(contato_prepend, '')] = p.value
     end
     r
+  end
+  
+  def contato_key
+    key.gsub(self.class.contato_prepend, '')
   end
   
   def self.biografia_key
