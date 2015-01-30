@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-
-  get '/datasource' => 'data#datasource', defaults: { format: :json }
   
-  put '/biografia' => 'data#update_biografia'
-  post '/cantada' => 'data#nova_cantada'
-  delete '/cantada/:id' => 'data#remover_cantada'
+  get     '/datasource'   => 'data#datasource', defaults: { format: :json }
   
-  post '/contatos' => 'data#novo_contato'
-  put '/contatos' => 'data#atualizar_contatos'
-  delete '/contato/:id' => 'data#remover_contato'
+  put     '/biografia'    => 'data#update_biografia'
+  post    '/cantada'      => 'data#nova_cantada'
+  delete  '/cantada/:id'  => 'data#remover_cantada'
   
-  post '/albuns' => 'data#novo_album'
+  post    '/contatos'     => 'data#novo_contato'
+  put     '/contatos'     => 'data#atualizar_contatos'
+  delete  '/contato/:id'  => 'data#remover_contato'
+  
+  post    '/albuns'       => 'data#novo_album'
   
   scope 'api', defaults: { format: :json } do
     # Registar/Atualizar usuario
@@ -22,6 +22,11 @@ Rails.application.routes.draw do
     post '/cantadas' => 'cantadas#create'
     # Buscar cantadas recebidas
     get  '/cantadas' => 'cantadas#list'
+    
+    # Pegar conteudo do mural
+    get  '/mural' => 'posts#index'
+    # Postar conteudo no mural
+    post '/mural' => 'posts#create'
   end
 
   root 'pages#home'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122193253) do
+ActiveRecord::Schema.define(version: 20150130034426) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "nome"
@@ -40,6 +40,14 @@ ActiveRecord::Schema.define(version: 20150122193253) do
   create_table "params", force: :cascade do |t|
     t.string   "key"
     t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.integer  "aproved"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
