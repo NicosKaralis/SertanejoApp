@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   
   def index
     data, more = Post.page params[:page]
-    respond_with data: data, has_more: more
+    respond_with data: data # , has_more: more
   end
   
   def create

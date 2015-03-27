@@ -2,7 +2,7 @@ class CantadasController < ApplicationController
   
   def create
     response = nil
-    c = Cantada.new(from_user: params[:from].to_i, to_user: params[:to].to_i, content: params[:content])
+    c = Cantada.new(from_user: params[:from], to_user: params[:to], content: params[:content])
     if c.save
       response = c
     else
@@ -13,11 +13,7 @@ class CantadasController < ApplicationController
   end
 
   def list
-    response = {
-      sent: Cantada.from_sender(params[:user_id].to_i),
-      recieved: Cantada.to_reciver(params[:user_id].to_i)
-    }
-    respond_with response
+    respond_with Cantada.to_reciver(params[:user_id])
   end
   
 end

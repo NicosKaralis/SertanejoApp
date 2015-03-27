@@ -8,8 +8,9 @@ class Post < ActiveRecord::Base
                       numericality: { greater_than: 0, message: 'nao pode ser menor que 0' }
   
   def self.page(number)
-    data = aproved.limit(10).offset(number.to_i * 10)
-    more = aproved.count / 10
+    per_page = 50
+    data = aproved.limit(per_page).offset(number.to_i * per_page)
+    more = aproved.count / per_page
     
     [data, more > number.to_i]
   end

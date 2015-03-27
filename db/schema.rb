@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130034426) do
+ActiveRecord::Schema.define(version: 20150327132409) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "nome"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20150130034426) do
   end
 
   create_table "cantadas", force: :cascade do |t|
-    t.integer  "from_user"
-    t.integer  "to_user"
+    t.string   "from_user"
+    t.string   "to_user"
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150130034426) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer  "user_id"
+    t.string   "user_id"
     t.text     "content"
     t.integer  "aproved"
     t.datetime "created_at", null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20150130034426) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer  "fb_id"
+    t.string   "fb_id"
     t.string   "foto_url"
     t.string   "sexo"
     t.datetime "created_at", null: false

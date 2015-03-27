@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
                    format: { with: /\A[mf]\z/i, message: 'valores permitidos [m f]' }
     
   def self.buscar(user_id, sexo)
-    where.not(fb_id: user_id.to_i).where(sexo: sexo).order("RANDOM()").first
+    where.not(fb_id: user_id.to_i).where(sexo: sexo).order("RANDOM()").limit(3)
   end
   
   def self.masculinos
