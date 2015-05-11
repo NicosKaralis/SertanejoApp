@@ -282,7 +282,7 @@
         <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
     </object>
     <object type="LMREQUEST" id="z124">
-        <attribute name="body" type="string">[{"data":{"keyValues":[["from","12345678901234",true],["to","12345678901233",true],["content","Content",true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
+        <attribute name="body" type="string">[{"data":{"keyValues":[["from","644298879003316",true],["to","10205165574511301",true],["content","Cuida bem dela",true]]},"identifier":"com.luckymarmot.BodyFormKeyValueDynamicValue"}]</attribute>
         <attribute name="uuid" type="string">D836B81A-5162-4391-A195-C5A3A491C31C</attribute>
         <attribute name="url" type="string">[{"data":{"environmentVariable":"003B84A0-BAF7-4160-BA59-E29DCF9482A6"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/api\\/cantadas.json"]</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
@@ -334,7 +334,7 @@
     </object>
     <object type="LMREQUEST" id="z128">
         <attribute name="uuid" type="string">E13F755A-4558-4FCB-BD3B-34C67B74174A</attribute>
-        <attribute name="url" type="string">[{"data":{"environmentVariable":"003B84A0-BAF7-4160-BA59-E29DCF9482A6"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/api\\/cantadas?user_id=12345678901233"]</attribute>
+        <attribute name="url" type="string">[{"data":{"environmentVariable":"003B84A0-BAF7-4160-BA59-E29DCF9482A6"},"identifier":"com.luckymarmot.EnvironmentVariableDynamicValue"},"\\/api\\/cantadas?user_id=1043886715639744"]</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
